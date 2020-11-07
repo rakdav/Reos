@@ -1,0 +1,49 @@
+﻿<Window x:Class="reostats.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:reostats"
+        mc:Ignorable="d"
+        Title="Сопротивления" Height="450" Width="800" FontSize="20" Background="Green" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="Выберите сопротивления" 
+                  Margin="10 10 10 10" Padding="10 10 10 10" Background="Green">
+            <StackPanel Orientation="Vertical">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="cb1" Grid.Row="0" Grid.Column="0" Margin="0 10 0 10" Content="R1" Click="cb1_Click"/>
+                    <TextBox x:Name="R1" Grid.Row="0" Grid.Column="1" Margin="20 10 0 10"/>
+                    <CheckBox x:Name="cb2" Grid.Row="1" Grid.Column="0" Margin="0 10 0 10" Content="R2" Click="cb2_Click"/>
+                    <TextBox x:Name="R2" Grid.Row="1" Grid.Column="1" Margin="20 10 0 10"/>
+                    <CheckBox x:Name="cb3" Grid.Row="2" Grid.Column="0" Margin="0 10 0 10" Content="R3" Click="cb3_Click"/>
+                    <TextBox x:Name="R3" Grid.Row="2" Grid.Column="1" Margin="20 10 0 10"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="1" Header="Выберите вид соединения" Background="Green"
+                  Margin="10 10 10 10" Padding="10 10 10 10">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <RadioButton Content="Последовательное" GroupName="VID" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Параллельное" GroupName="VID"/>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock x:Name="Result" Grid.Row="1" Grid.ColumnSpan="2" Background="White" Margin="10 10 10 10" Padding="10 10 10 10"/>
+    </Grid>
+</Window>
